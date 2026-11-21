@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Firstlight Radar — Token Launch Radar</title>
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<header class="top">
+  <div>
+    <h1>Firstlight Radar</h1>
+    <p class="sub">Which pre-token protocol is worth farming next — ranked by what its launch would be worth.</p>
+  </div>
+  <div class="meta" id="meta"></div>
+</header>
+<section class="stats" id="stats"></section>
+<section class="controls">
+  <input id="q" type="search" placeholder="Search name, slug or category" aria-label="Search">
+  <select id="cat" aria-label="Category"><option value="">All categories</option></select>
+  <select id="chain" aria-label="Chain"><option value="">All chains</option></select>
+  <select id="status" aria-label="Token status">
+    <option value="">Pre-token + live</option>
+    <option value="pre-token">Records no token</option>
+    <option value="token-live">Token live</option>
+  </select>
+  <label class="check"><input id="watch" type="checkbox"> Watchlist only</label>
+  <select id="sort" aria-label="Sort">
+    <option value="rank">Sort: rank</option>
+    <option value="tvl">Sort: TVL</option>
+    <option value="growth">Sort: 7-day growth</option>
+    <option value="name">Sort: name</option>
+  </select>
+</section>
+<p class="count" id="count"></p>
+<main>
+  <table id="board">
+    <thead>
+      <tr><th>#</th><th>Protocol</th><th>Category</th><th>Chains</th><th>TVL</th><th>7d</th><th>Implied value</th><th>Status</th></tr>
+    </thead>
+    <tbody id="rows"></tbody>
+  </table>
+  <section id="detail" class="detail" hidden></section>
+</main>
+<section class="model" id="model"></section>
+<footer>
+  <p>Data: a frozen DefiLlama snapshot, 14 Nov 2026. “Records no token” means the record carries neither a CoinGecko id nor a symbol — a record, not proof the protocol has none. Implied values are this radar's own claim, not a prediction of a launch.</p>
+</footer>
+<script src="../data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

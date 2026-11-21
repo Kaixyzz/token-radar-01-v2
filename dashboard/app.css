@@ -1,0 +1,117 @@
+/* Firstlight Radar — a dark board with one amber accent. No network, no fonts. */
+:root {
+  --bg: #0c1220;
+  --panel: #121a2e;
+  --panel2: #16213a;
+  --line: #24304d;
+  --text: #e8ecf4;
+  --muted: #93a1bd;
+  --amber: #f5b942;
+  --amber-dim: #8a6a24;
+  --teal: #4fd1a5;
+  --red: #f0787a;
+  --grey: #8b93a5;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 15px;
+  line-height: 1.45;
+}
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+  padding: 28px 32px 8px;
+}
+h1 { margin: 0; font-size: 34px; letter-spacing: -0.5px; color: var(--amber); }
+.sub { margin: 6px 0 0; color: var(--muted); max-width: 640px; }
+.meta { text-align: right; color: var(--muted); font-size: 13px; white-space: nowrap; padding-top: 6px; }
+.meta b { color: var(--text); }
+.stats {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 16px 32px 4px;
+}
+.stat {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 10px 16px;
+  min-width: 130px;
+}
+.stat .n { font-size: 22px; font-weight: 700; }
+.stat .l { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
+.controls {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 14px 32px 4px;
+}
+.controls input, .controls select {
+  background: var(--panel);
+  color: var(--text);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 9px 12px;
+  font-size: 14px;
+}
+.controls input { flex: 1 1 260px; }
+.controls input:focus, .controls select:focus { outline: 2px solid var(--amber-dim); }
+.check { color: var(--muted); font-size: 14px; display: flex; gap: 6px; align-items: center; }
+.count { padding: 8px 32px 0; color: var(--muted); font-size: 13px; margin: 0; }
+main { padding: 12px 32px 8px; }
+table { width: 100%; border-collapse: collapse; background: var(--panel); border-radius: 10px; overflow: hidden; }
+th, td { padding: 9px 12px; text-align: left; border-bottom: 1px solid var(--line); }
+th { font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); background: var(--panel2); }
+tbody tr { cursor: pointer; }
+tbody tr:hover { background: var(--panel2); }
+tbody tr.sel { background: #1d2a47; }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+td .slug { color: var(--muted); font-size: 12px; display: block; }
+td .val { font-weight: 700; color: var(--amber); }
+.pos { color: var(--teal); }
+.neg { color: var(--red); }
+.badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 3px 8px;
+  border-radius: 20px;
+  text-transform: uppercase;
+}
+.badge.pre { background: #3a2f10; color: var(--amber); }
+.badge.live { background: #2a2f3a; color: var(--grey); }
+.badge.watch { background: #123a2c; color: var(--teal); margin-left: 6px; }
+.detail {
+  margin-top: 18px;
+  background: var(--panel);
+  border: 1px solid var(--amber-dim);
+  border-radius: 12px;
+  padding: 20px 24px;
+}
+.detail h2 { margin: 0 0 4px; font-size: 24px; }
+.detail h2 .slug { color: var(--muted); font-size: 14px; font-weight: 400; }
+.detail .facts { display: flex; gap: 24px; flex-wrap: wrap; margin: 12px 0; color: var(--muted); font-size: 14px; }
+.detail .facts b { color: var(--text); }
+.detail h3 { margin: 18px 0 6px; font-size: 14px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--amber); }
+.detail ol { margin: 0; padding-left: 20px; }
+.detail ol li { margin-bottom: 8px; }
+.model {
+  margin: 8px 32px 8px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 18px 24px;
+}
+.model h2 { margin: 0 0 8px; font-size: 18px; color: var(--amber); }
+.model p { margin: 6px 0; color: var(--muted); }
+.model code { color: var(--text); background: var(--panel2); padding: 1px 6px; border-radius: 5px; }
+footer { padding: 8px 32px 28px; color: var(--muted); font-size: 13px; }
